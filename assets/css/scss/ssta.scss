@@ -38,6 +38,10 @@ https://github.com/craigwfox/Simple-Starter-Theme.git
       * {
         display: inline-block;
         vertical-align: bottom;
+
+        &:first-child {
+          border-bottom: 1px solid #999;
+        }
       }
 
       &:after {
@@ -63,8 +67,6 @@ https://github.com/craigwfox/Simple-Starter-Theme.git
 
     .ssta-content {
       padding: 0 0 .375em;
-
-      border-bottom: 1px solid #999;
 
       @include clearfix();
     }
