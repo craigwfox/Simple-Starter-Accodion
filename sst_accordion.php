@@ -9,6 +9,11 @@
    License: GPL2
    */
 
+
+
+/* ------------------------------------------------------------------------
+  Admin Page Setup
+------------------------------------------------------------------------ */
   function ssta_admin_page() {
     include('ssta_admin.php');
   }
@@ -17,12 +22,30 @@
     add_options_page('Simple Starter Accordion Admin', 'Simple Starter Accordion', 'manage_options', 'sst_accordion.php', 'ssta_admin_page');
   }
 
+  function ssta_admin_styles($hook) {
+    if ( 'ssta_admin.php' != $hook ) {
+      wp_enqueue_style( 'ssta-styles', plugins_url( '/assets/css/ssta-admin.min.css', __FILE__ ) );
+      return;
+    }
+  }
+  add_action( 'admin_enqueue_scripts', 'ssta_admin_styles' );
+
+
+
+/* ------------------------------------------------------------------------
+  Styles and Js for Theme Front End
+------------------------------------------------------------------------ */
   function ssta_styles() {
-    wp_enqueue_style( 'ssta-styles', plugins_url( '/assets/css/ssta.min.css', __FILE__ ) );
-    wp_enqueue_script( 'ssta-scripts', plugins_url( '/assets/js/ssta.min.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+   if (!is_admin()) {
+      wp_enqueue_script( 'ssta-scripts', plugins_url( '/assets/js/ssta.min.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+    }
+    wp_enqueue_style( 'ssta-styles', plugins_url( '/assets/css/ssta.min.css', __FILE__ ) );     
   }
   add_action( 'wp_enqueue_scripts', 'ssta_styles' );
 
+/* ------------------------------------------------------------------------
+  Shortcodes for the Accordion
+------------------------------------------------------------------------ */
 
   function ssta_wrap_shortcode($atts, $content = null) {
     extract(shortcode_atts( array(
