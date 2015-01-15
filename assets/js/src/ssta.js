@@ -11,11 +11,13 @@ jQuery(document).ready(function($) {
         .removeClass('ssta-content--active')
           .slideUp(aniSpeed);
       $('.ssta-title--active').removeClass('ssta-title--active');
+
+      console.log('active tab clicked');
     } else {
 
     // Hide Previous Content
       $('.ssta-content.ssta-content--active')
-        .removeClass('ssta-active')
+        .removeClass('ssta-content--active')
           .slideUp(aniSpeed);
       $('.ssta-title--active').removeClass('ssta-title--active');
 
@@ -25,6 +27,8 @@ jQuery(document).ready(function($) {
           .slideDown(aniSpeed);
 
       el.addClass('ssta-title--active');
+
+      console.log('none active tag clicked');
     }
   });
 
