@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   // Watch
     watch: {
       css: {
-        files: 'assets/css/scss/**/*.scss',
+        files: 'assets/css/scss/*.scss',
         tasks: ['sass', 'autoprefixer'],
         options: {
           livereload: true,
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
   // CSS
     sass: {
-      dist: {
+      sassFront: {
         options: {
           outputStyle: 'compressed'
         },
@@ -33,17 +33,27 @@ module.exports = function(grunt) {
           'assets/css/ssta.css': 'assets/css/scss/ssta.scss',
         }
       },
+      sassAdmin: {
+        options: {
+          outputStyle: 'compressed'
+        },
+        files: {
+          'assets/css/ssta-admin.css': 'assets/css/scss/ssta-admin.scss',
+        }
+      },
     },
 
     autoprefixer: {
       options: {
         browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-      },single_file: {
-      options: {
-        // Target-specific options go here.
       },
+      preFront: {
         src: 'assets/css/ssta.css',
         dest: 'assets/css/ssta.min.css'
+      },
+      preAdmin: {
+        src: 'assets/css/ssta-admin.css',
+        dest: 'assets/css/ssta-admin.min.css'
       },
     },
 
