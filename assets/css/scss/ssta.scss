@@ -11,5 +11,65 @@
 By Craig Fox @ craigwfox.com
 https://github.com/craigwfox/Simple-Starter-Theme.git
 ********************************************************************* */
+@mixin clearfix{
+  &:before, &:after {
+    content:"";
+    display:table;
+  }
+  &:after {
+    clear:both;
+  }
+  zoom:1;
+}
 
-.hmm {}
+
+.ssta-wrap {
+  @include clearfix();
+}
+  .ssta-section {
+    @include clearfix();
+  }
+
+    .ssta-title {
+      position: relative;
+
+      cursor: pointer;
+
+      * {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+
+      &:after {
+        content: "";
+
+        display: inline-block;
+        vertical-align: baseline;
+
+        margin-left: .5em;
+
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 10px solid #333;
+
+        transition:transform .2s;
+      }
+    }
+    .ssta-title--active {
+      &:after {
+        transform:rotate(90deg);
+      }
+    }
+
+    .ssta-content {
+      padding: 0 0 .375em;
+
+      border-bottom: 1px solid #999;
+
+      @include clearfix();
+    }
+
+    .ssta-active {
+    }
+    .ssta-hide {
+    }
