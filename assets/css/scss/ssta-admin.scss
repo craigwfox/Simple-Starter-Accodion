@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/*! ********************************************************************
+   _____            __                                    
+  / __(_)_ _  ___  / /__                                  
+ _\ \/ /  ' \/ _ \/ / -_)                                 
+/___/_/_/_/_/ .__/_/\__/          ________                
+  / __/ /__/_/_____/ /____ ____  /_  __/ /  ___ __ _  ___ 
+ _\ \/ __/ _ `/ __/ __/ -_) __/   / / / _ \/ -_)  ' \/ -_)
+/___/\__/\_,_/_/  \__/\__/_/     /_/ /_//_/\__/_/_/_/\__/ 
+                                                                        
+By Craig Fox @ craigwfox.com
+https://github.com/craigwfox/Simple-Starter-Theme.git
+********************************************************************* */
+
+  .ssta-admin {}
+    .ssta-admin__title {
+      margin-bottom: 0;
+    }
+    .ssta-admin__subtitle {
+      margin-bottom: .5em;
+    }
+
+    .ssta-admin__instructions {
+      padding: 0 0 1em;
+
+      h3 {
+        margin: 0 0 .175em;
+      }
+      p {
+        margin-top: 0;
+      }
+    }
+    
+    .ssta-admin__example {}
+      .ssta-admin__code-block {
+        width: 90%;
+        max-width: 700px;
+
+        overflow: auto;
+
+        padding: 2em 0 1em;
+        margin: 1em 0;
+
+        background: #ededed;
+        border:1px solid #ccc;
+
+        color: #999;
+        font-size: 1.075em;
+      }
+        .ssta-admin__scode {
+          font-weight: 400;
+          color: #333;
+        }
